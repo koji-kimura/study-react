@@ -1,16 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 
-import "./styles.css";
+// const returnReactElement = () => {
+//   return <h2>test</h2>;
+// };
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
-  );
-}
+const returnReactElement2 = text => {
+  return <h2>{text}</h2>;
+};
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+// 関数だから実行するために()が必要
+render(returnReactElement2("こんにちは"), document.getElementById("root"));
