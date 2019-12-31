@@ -1,13 +1,18 @@
 import React from "react";
 import { render } from "react-dom";
 
-// const returnReactElement = () => {
-//   return <h2>test</h2>;
-// };
-
-const returnReactElement2 = text => {
-  return <h2>{text}</h2>;
+// 冒頭を大文字にしてカスタムタグのような記法でコンポーネントになる
+const ReturnReactElement = ({ name, music }) => {
+  return (
+    <h2>
+      {name}
+      {music}
+    </h2>
+  );
 };
 
 // 関数だから実行するために()が必要
-render(returnReactElement2("こんにちは"), document.getElementById("root"));
+render(
+  <ReturnReactElement name="test" music="jazz" />,
+  document.getElementById("root")
+);
