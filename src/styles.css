@@ -2,3 +2,15 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.water {
+  background: skyblue;
+}
+
+.steam {
+  background: red;
+}
+
+.ice {
+  background: blue;
+}
