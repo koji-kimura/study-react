@@ -1,18 +1,28 @@
 import React from "react";
 import { render } from "react-dom";
 
-// 冒頭を大文字にしてカスタムタグのような記法でコンポーネントになる
-const ReturnReactElement = ({ name, music }) => {
-  return (
-    <h2>
-      {name}
-      {music}
-    </h2>
-  );
-};
+import "./styles.css";
 
-// 関数だから実行するために()が必要
-render(
-  <ReturnReactElement name="test" music="jazz" />,
-  document.getElementById("root")
-);
+class Human extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "ki"
+    };
+  }
+
+  render() {
+    return (
+      <h2 onClick={this.onbuttonClick}>
+        {this.state.name} {this.props.age}
+      </h2>
+    );
+  }
+  // メソッドについてはthisがあやふやなのでarrow関数で描く
+  onbuttonClick = () => {
+    this.setState({ name: this.state.name + 1 });
+  };
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Human age="30" />, rootElement);
